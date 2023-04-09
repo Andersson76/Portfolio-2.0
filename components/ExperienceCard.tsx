@@ -1,12 +1,14 @@
-import { motion } from 'framer-motion'
 import React from 'react'
-import { SiTypescript } from "react-icons/si";
+import { motion } from 'framer-motion'
 
 type Props = {}
 
 function  ExperienceCard({}: Props) {
   return (
-    <article>
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
+    w-[500px] md:w-[600px] xl:w-[900] snap-center bg-[#292929] p-10 hover:opacity-100
+    opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden "
+    >
       <motion.img
         initial={{
           y: -100,
@@ -28,27 +30,17 @@ function  ExperienceCard({}: Props) {
             src="/javascript.svg"
             alt="TS"
           />
-          <img
-            className="h-10 w-10 rounded-full"
-            src="/react.svg"
-            alt="TS"
-          />
+          <img className="h-10 w-10 rounded-full" src="/react.svg" alt="TS" />
           <img
             className="h-10 w-10 rounded-full"
             src="/typescript.svg"
             alt="TS"
           />
-
-          {/* Tech used */}
-          {/* Tech used */}
-          {/* Tech used */}
-          {/* Tech used */}
         </div>
       </div>
-      <p>Started work... - Ended...</p>
+      <p className="uppercase py-1 text-gray-500">Started work - Ended</p>
 
       <ul className="list-disc space-y-4 ml-5 text-lg">
-        <li>Summary points</li>
         <li>Summary points</li>
         <li>Summary points</li>
         <li>Summary points</li>
