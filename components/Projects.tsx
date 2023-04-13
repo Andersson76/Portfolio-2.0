@@ -20,8 +20,7 @@ function Projects({}: Props) {
       snap-mandatory z-20"
       >
         {projects.map((i) => (
-          <div
-            className="w-screen flex-shrink-0 snap-center flex flex-col
+          <div className="w-screen flex-shrink-0 snap-center flex flex-col
             space-y-5 items-center justify-center p-20 md:p-44 h-screen">
             <img src="/nextjs.svg" alt="ts" />
 
