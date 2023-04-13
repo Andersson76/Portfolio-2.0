@@ -36,7 +36,7 @@ export default function About({}: Props) {
         <h4 className="text-4xl font-semibold">
           Here is a{" "}
           <span className='underline decoration-[#F7AB0A]/50'>little</span>{" "}
-          backgtound
+          background
         </h4>
         <p className='text-base'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
