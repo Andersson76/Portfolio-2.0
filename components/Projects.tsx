@@ -19,7 +19,7 @@ function Projects({}: Props) {
         className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x
       snap-mandatory z-20"
       >
-        {projects.map((i) => (
+        {projects.map((project, i) => (
           <div className="w-screen flex-shrink-0 snap-center flex flex-col
             space-y-5 items-center justify-center p-20 md:p-44 h-screen">
             <img src="/nextjs.svg" alt="ts" />
@@ -27,7 +27,7 @@ function Projects({}: Props) {
             <div>
               <h4 className='text-4xl font-semibold text-center'>
                 <span className='underline decoration-[#F7AB0A]/50'>
-                  Case Study {i} of {projects.length}:
+                  Case Study {i + 1} of {projects.length}:
                 </span>{" "}
                 Next.js Project
               </h4>
