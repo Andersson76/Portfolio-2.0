@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+/* import React, {useRef, useState} from 'react'
 import {
   Card,
   Container,
@@ -101,4 +101,4 @@ export const GetStartedTutorial = () => {
       </Card>
     </div>
   )
-}
+} */
