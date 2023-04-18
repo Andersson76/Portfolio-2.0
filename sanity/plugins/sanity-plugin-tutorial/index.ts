@@ -1,4 +1,4 @@
-/* import {definePlugin} from 'sanity'
+import {definePlugin} from 'sanity'
 import {CustomDefaultLayout} from './CustomDefaultLayout'
 
 export const getStartedPlugin = definePlugin({
@@ -9,4 +9,3 @@ export const getStartedPlugin = definePlugin({
     }
   },
 })
- */
