@@ -20,6 +20,7 @@ export default defineConfig({
   },
 })
 
+
 function visionTool(): any {
   throw new Error('Function not implemented.')
 }
