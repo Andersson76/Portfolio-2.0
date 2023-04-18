@@ -1,5 +1,5 @@
 import {defineConfig, isDev} from 'sanity'
-import {visionTool} from '@sanity/vision'
+//import {visionTool} from '@sanity/vision'
 import {deskTool} from 'sanity/desk'
 import {schemaTypes} from './schemas'
 import {getStartedPlugin} from './plugins/sanity-plugin-tutorial'
@@ -19,4 +19,8 @@ export default defineConfig({
     types: schemaTypes,
   },
 })
+
+function visionTool(): any {
+  throw new Error('Function not implemented.')
+}
 
