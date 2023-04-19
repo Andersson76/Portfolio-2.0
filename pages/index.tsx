@@ -1,6 +1,4 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import type { NextPage } from 'next'
+import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
@@ -10,10 +8,25 @@ import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import ContactMe from '@/components/ContactMe'
 import Link from 'next/link'
+import { Experience, PageInfo, Project, Skill, Social } from '@/sanity/typings'
+import  {fetchPageInfo}  from '@/utils/fetchPageInfo'
+import  fetchExperiences  from '@/utils/fetchExperiences'
+import  fetchSkills  from '@/utils/fetchSkills'
+import  fetchProjects  from '@/utils/fetchProjects'
+import  fetchSocials  from '@/utils/fetchSocials'
 
-const inter = Inter({ subsets: ['latin'] })
+type Props = {
+ pageInfo: PageInfo[];
+  experiences: Experience[];
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+}
 
-export default function Home() {
+const Home = ({
+   pageInfo,  experiences, skills, projects, socials,
+}: Props) => {
+  console.log(pageInfo)
   return (
     <div
       className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory
@@ -64,4 +77,26 @@ export default function Home() {
       </Link>
     </div>
   );
-}
+};
+
+export default Home;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+
+    const pageInfo: PageInfo[] = await fetchPageInfo()
+    const experiences: Experience[] = await fetchExperiences();
+    const skills: Skill[] = await fetchSkills();
+    const projects: Project[] = await fetchProjects();
+    const socials: Social[] = await fetchSocials();
+
+    return {
+      props: {
+        experiences,
+        pageInfo,
+        skills: skills ? skills : [],
+        projects,
+        socials,
+      },
+    };
+
+};
