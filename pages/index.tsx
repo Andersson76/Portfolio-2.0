@@ -91,11 +91,11 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
     return {
       props: {
-        experiences,
-        pageInfo,
+        experiences: experiences ? experiences : [],
+        pageInfo: pageInfo ? pageInfo : [],
         skills: skills ? skills : [],
-        projects,
-        socials,
+        projects: projects ? projects : [],
+        socials: socials ? socials : [],
       },
     };
 
