@@ -29,7 +29,7 @@ function ExperienceCard({ experience }: Props) {
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">Webbutvecklare</h4>
         <p className="font-bold text-2xl mt-1">Wallmander & Co</p>
-        <div className="flex space-x-2 my-2">
+        <div className="flex space-x-2 my-8">
           {experience.technologies.map(technology => (
             <img
               key={technology._id}
@@ -38,8 +38,8 @@ function ExperienceCard({ experience }: Props) {
             />
           ))}
         </div>
-      
-      <p className="uppercase py-1 text-gray-500">
+
+      <p className="uppercase py-1 mb-4 text-gray-500">
         {new Date(experience.dateStarted).toDateString()} - {experience.
         isCurrentlyWorkingHere ? "Present" : new Date(experience.dateEnded).toDateString()}
       </p>
