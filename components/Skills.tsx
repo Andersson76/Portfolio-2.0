@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import Skill from './Skill'
+import { Skill as SkillType } from '@/sanity/typings'
 
-type Props = {}
+type Props = {
+  skills: SkillType[]
+}
 
 function Skills({}: Props) {
   return (

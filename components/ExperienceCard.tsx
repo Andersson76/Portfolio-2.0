@@ -29,7 +29,7 @@ function ExperienceCard({ experience }: Props) {
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">Webbutvecklare</h4>
         <p className="font-bold text-2xl mt-1">Wallmander & Co</p>
-        <div className="flex space-x-2 my-8">
+        <div className="flex space-x-2 my-2">
           {experience.technologies.map(technology => (
             <img
               key={technology._id}
@@ -39,12 +39,13 @@ function ExperienceCard({ experience }: Props) {
           ))}
         </div>
 
-      <p className="uppercase py-1 mb-4 text-gray-500">
-        {new Date(experience.dateStarted).toDateString()} - {experience.
-        isCurrentlyWorkingHere ? "Present" : new Date(experience.dateEnded).toDateString()}
+      <p className="uppercase py-5 text-gray-300">
+        {new Date(experience.dateStarted).toDateString()} - {" "}
+        {experience.isCurrentlyWorkingHere ? "Present" : new Date(experience.dateEnded).toDateString()}
       </p>
 
-      <ul className="list-disc space-y-4 ml-5 text-lg">
+      <ul className="list-disc space-y-4 ml-5 text-lg max-h-96 w-4/5 overflow-y-scroll pr-5
+      scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80">
         {experience.points.map((point: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined, i: React.Key | null | undefined) => (
           <li key={i}>{point}</li>
         ))}
