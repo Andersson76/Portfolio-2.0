@@ -1,9 +1,13 @@
+import { urlFor } from '@/sanity';
+import { PageInfo } from '@/sanity/typings';
 import { motion } from 'framer-motion';
 import React from 'react'
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-export default function About({}: Props) {
+export default function About({pageInfo}: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -26,7 +30,7 @@ export default function About({}: Props) {
         }}
         whileInView={{ opacity: 1, x: 0 }}
         //viewport={{ once: true }}
-        src="/Foto.jpg"
+        src={urlFor(pageInfo?.profilePic).url()}
         alt="Martin Andersson"
         className="-mb-20 mt-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
         md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
@@ -38,12 +42,7 @@ export default function About({}: Props) {
           <span className='underline decoration-[#F7AB0A]/50'>little</span>{" "}
           background
         </h4>
-        <p className='text-base'>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Optio unde velit eum iusto vel nihil ab itaque illo dolorem
-            cupiditate veniam voluptatem fugit molestias, quia odit veritatis
-            quaerat consequatur nulla.
-        </p>
+        <p className='text-base'>{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

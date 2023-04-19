@@ -39,11 +39,16 @@ export interface Skill extends SanityBody {
 }
 
 export interface Experience extends SanityBody {
+  points: ReactNode;
+  dateEnded: string | number | Date;
+  isCurrentlyWorkingHere: any;
+  dateStarted: string | number | Date;
   _type: 'experience'
   image: Image
   title: string
   summary: string
   technologies: Technology[]
+  companyImage: Image
 }
 
 export interface Project extends SanityBody {
