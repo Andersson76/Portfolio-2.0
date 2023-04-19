@@ -9,14 +9,14 @@ import Projects from '@/components/Projects'
 import ContactMe from '@/components/ContactMe'
 import Link from 'next/link'
 import { Experience, PageInfo, Project, Skill, Social } from '@/sanity/typings'
-import  {fetchPageInfo}  from '@/utils/fetchPageInfo'
+import  fetchPageInfo  from '@/utils/fetchPageInfo'
 import  fetchExperiences  from '@/utils/fetchExperiences'
 import  fetchSkills  from '@/utils/fetchSkills'
 import  fetchProjects  from '@/utils/fetchProjects'
 import  fetchSocials  from '@/utils/fetchSocials'
 
 type Props = {
- pageInfo: PageInfo[];
+ pageInfo: PageInfo;
   experiences: Experience[];
   skills: Skill[];
   projects: Project[];
@@ -37,10 +37,10 @@ const Home = ({
         <title>Martins Portfolio</title>
       </Head>
 
-      <Header />
+      <Header socials={socials} />
 
       <section id="hero" className="snap-start">
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
 
       <section id="about" className="snap-center">
@@ -83,7 +83,7 @@ export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
 
-    const pageInfo: PageInfo[] = await fetchPageInfo()
+    const pageInfo: PageInfo = await fetchPageInfo()
     const experiences: Experience[] = await fetchExperiences();
     const skills: Skill[] = await fetchSkills();
     const projects: Project[] = await fetchProjects();
@@ -92,11 +92,13 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     return {
       props: {
         experiences: experiences ? experiences : [],
-        pageInfo: pageInfo ? pageInfo : [],
+        pageInfo,
         skills: skills ? skills : [],
         projects: projects ? projects : [],
         socials: socials ? socials : [],
       },
+
+      revalidate: 10,
     };
 
 };

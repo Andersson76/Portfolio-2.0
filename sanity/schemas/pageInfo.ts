@@ -17,6 +17,11 @@ export default {
       },
     },
     {
+      name: 'role',
+      title: 'Role',
+      type: 'string',
+    },
+    {
       name: 'backgroundInformation',
       title: 'BackgroundInformation',
       type: 'string',

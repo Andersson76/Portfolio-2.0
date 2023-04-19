@@ -1,12 +1,15 @@
+import { Social } from '@/sanity/typings';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React from 'react'
 import ReactDOM from "react-dom";
 import { SocialIcon } from 'react-social-icons'
 
-type Props = {}
+type Props = {
+  socials: Social[]
+}
 
-export default function Header({}: Props) {
+export default function Header({ socials }: Props) {
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -25,17 +28,16 @@ export default function Header({}: Props) {
         }}
         className="flex flex-row items-center"
       >
-        {/* Social Icons   */}
-        <SocialIcon
-          url="https://linkedin.com/in/martin-andersson-boracay"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://github.com/Andersson76"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        ))}
+
       </motion.div>
 
       <motion.div
