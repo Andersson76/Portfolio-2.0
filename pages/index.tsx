@@ -24,9 +24,8 @@ type Props = {
 }
 
 const Home = ({
-   pageInfo,  experiences, skills, projects, socials,
-}: Props) => {
-  console.log(pageInfo)
+   pageInfo, experiences, skills, projects, socials,}: Props) => {
+    console.log(skills)
   return (
     <div
       className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory
@@ -52,7 +51,7 @@ const Home = ({
       </section>
 
       <section id="skills" className="snap-start">
-        <Skills />
+        <Skills skills={skills} />
       </section>
 
       <section id="projects" className="snap-start">
@@ -83,22 +82,22 @@ export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
 
-    const pageInfo: PageInfo = await fetchPageInfo()
-    const experiences: Experience[] = await fetchExperiences();
-    const skills: Skill[] = await fetchSkills();
-    const projects: Project[] = await fetchProjects();
-    const socials: Social[] = await fetchSocials();
+  const pageInfo: PageInfo = await fetchPageInfo()
+  const experiences: Experience[] = await fetchExperiences();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocials();
 
-    return {
-      props: {
-        experiences: experiences ? experiences : [],
-        pageInfo,
-        skills: skills ? skills : [],
-        projects: projects ? projects : [],
-        socials: socials ? socials : [],
-      },
+  console.log(skills)
 
-      revalidate: 10,
-    };
-
+  return {
+    props: {
+      experiences: experiences ? experiences : [],
+      pageInfo,
+      skills: skills ? skills : [],
+      projects: projects ? projects : [],
+      socials: socials ? socials : [],
+    },
+    revalidate: 60,
+  };
 };
