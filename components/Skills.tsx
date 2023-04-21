@@ -17,11 +17,11 @@ function Skills({ skills }: Props) {
         Skills
       </h3>
       <div className="pt-16 grid grid-cols-4 gap-5">
-        {skills?.map((skill) => (
-          <Skill key={skill._type} skill={skill} />
-        ))}
-        {skills?.map((skill) => (
+        {skills?.slice(0, skills.length / 2).map((skill) => (
           <Skill key={skill._id} skill={skill} />
+        ))}
+        {skills?.slice(skills.length / 2, skills.length).map((skill) => (
+          <Skill key={skill._id} skill={skill} directionLeft />
         ))}
       </div>
     </motion.div>
