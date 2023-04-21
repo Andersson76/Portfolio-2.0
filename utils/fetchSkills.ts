@@ -7,7 +7,8 @@ const fetchSkills = async() => {
 
     const data = await res.json()
     const skills: Skill[] = data.skills;
-
+      console.log("Hello!")
+      console.log(data)
     console.log("fetching", skills)
 
     return skills;
