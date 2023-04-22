@@ -32,6 +32,7 @@ export interface Technology extends SanityBody {
 }
 
 export interface Skill extends SanityBody {
+    name: string;
     _type: "skill";
     image: Image;
     progress: number;
