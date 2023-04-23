@@ -14,6 +14,9 @@ import  fetchExperiences  from '@/utils/fetchExperiences'
 import  fetchSkills  from '@/utils/fetchSkills'
 import  fetchProjects  from '@/utils/fetchProjects'
 import  fetchSocials  from '@/utils/fetchSocials'
+import React from "react";
+import AudioPlayer from '@/components/AudioPlayer'
+
 
 type Props = {
  pageInfo: PageInfo;
@@ -24,7 +27,7 @@ type Props = {
 }
 
 const Home = ({
-   pageInfo, experiences, skills, projects, socials,}: Props) => {
+   pageInfo, experiences, skills, projects, socials}: Props) => {
     console.log(skills)
   return (
     <div
@@ -32,9 +35,13 @@ const Home = ({
     overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20
     scrollbar-thumb-[#F7AB0A]"
     >
+
+
       <Head>
         <title>Martins Portfolio</title>
       </Head>
+
+      <AudioPlayer />
 
       <Header socials={socials} />
 
@@ -101,3 +108,4 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     revalidate: 60,
   };
 };
+

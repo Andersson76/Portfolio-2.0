@@ -24,12 +24,12 @@ function ContactMe({}: Props) {
       className="h-screen flex relative flex-col text-center md:text-left md:flex-row
     max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-12 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
 
       <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
+        <h4 className="text-2xl flex top-24 font-semibold text-center">
           I have got just what you need.{" "}
           <span className="underline decoration-[#F7AB0A]/50">Lets talk</span>
         </h4>
