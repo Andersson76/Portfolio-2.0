@@ -14,8 +14,8 @@ import  fetchExperiences  from '@/utils/fetchExperiences'
 import  fetchSkills  from '@/utils/fetchSkills'
 import  fetchProjects  from '@/utils/fetchProjects'
 import  fetchSocials  from '@/utils/fetchSocials'
-import React from "react";
-import AudioPlayer from '@/components/AudioPlayer'
+import React, { useEffect } from "react";
+//import AudioPlayer from '@/components/AudioPlayer'
 
 
 type Props = {
@@ -29,6 +29,19 @@ type Props = {
 const Home = ({
    pageInfo, experiences, skills, projects, socials}: Props) => {
     console.log(skills)
+
+/* useEffect(() => {
+  const AudioPlayer = () => {
+    const audio = new Audio("/Buddha Bar Lounge - Dub Marley.mp3");
+    audio.autoplay = true;
+    audio.loop = true;
+    audio.play().catch((error) => {
+      console.log(error);
+    });
+  };
+  AudioPlayer()
+}, []); */
+
   return (
     <div
       className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory
@@ -41,7 +54,7 @@ const Home = ({
         <title>Martins Portfolio</title>
       </Head>
 
-      <AudioPlayer />
+      {/* <AudioPlayer /> */}
 
       <Header socials={socials} />
 
@@ -62,7 +75,7 @@ const Home = ({
       </section>
 
       <section id="projects" className="snap-start">
-        <Projects />
+        <Projects projects={projects} />
       </section>
 
       <section id="contact" className="snap-start">

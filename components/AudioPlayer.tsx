@@ -1,12 +1,16 @@
-import React, { useEffect } from "react";
+/* import React, { useEffect } from "react";
 
 
 const AudioPlayer = () => {
   useEffect(() => {
     const audio = new Audio('/Buddha Bar Lounge - Dub Marley.mp3');
-    audio.autoplay = true;
+    <audio
+      src="'/Buddha Bar Lounge - Dub Marley.mp3'"
+      className="autoplay allow"
+    ></audio>;
     audio.loop = true;
-    audio.play().catch((error) => {
+    audio.autoplay;
+    audio.play().catch(error => {
       console.log(error)
     });
   }, []);
@@ -14,4 +18,4 @@ const AudioPlayer = () => {
   return <></>;
 };
 
-export default AudioPlayer;
+export default AudioPlayer; */

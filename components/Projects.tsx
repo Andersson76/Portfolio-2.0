@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-type Props = {}
+import { Project } from '@/sanity/typings';
+import { urlFor } from '@/sanity';
 
-function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
+type Props = {
+  projects: Project[];
+};
+
+function Projects({ projects }: Props) {
 
   return (
     <motion.div
@@ -19,10 +23,11 @@ function Projects({}: Props) {
 
       <div
         className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x
-        snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]">
-        {projects.map((project, i: any) => (
+        snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]"
+      >
+        {projects?.map((project, i) => (
           <div
-            key={i}
+            key={project._id}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5
             items-center justify-center p-20 md:p-44 h-screen"
           >
@@ -34,7 +39,7 @@ function Projects({}: Props) {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               //viewport={{ once: true }}
-              src="/nextjs.svg"
+              src={urlFor(project?.image).url()}
               alt=""
             />
 
@@ -43,14 +48,21 @@ function Projects({}: Props) {
                 <span className="underline decoration-[#F7AB0A]/50">
                   Case Study {i + 1} of {projects.length}:
                 </span>{" "}
-                Next.js Project
+                {project?.title}
               </h4>
 
+              <div className='flex items-center space-x-2 justify-center'>
+                {project?.technologies.map((technology) => (
+                  <img
+                    className="h-10 w-10 "
+                    key={technology._id}
+                    src={urlFor(technology.image).url()}
+                    alt=""
+                  />
+                ))}
+              </div>
               <p className="text-lg text-center md:text-left">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                doloremque sunt velit cum debitis odio eveniet, ea aperiam
-                quaerat, facere, dolorem officia assumenda officiis itaque
-                deleniti libero ipsam. Voluptas, cupiditate.
+                {project?.summary}
               </p>
             </div>
           </div>
