@@ -24,14 +24,13 @@ function ContactMe({}: Props) {
       className="h-screen flex relative flex-col text-center md:text-left md:flex-row
     max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-12 uppercase tracking-[20px] text-gray-500 text-2xl">
+      {/* <h3 className=" top-12 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contact
-      </h3>
+      </h3> */}
 
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-2xl flex top-24 font-semibold text-center">
-          I have got just what you need.{" "}
-          <span className="underline decoration-[#F7AB0A]/50">Lets talk</span>
+      <div className="flex flex-col space-y-10 ">
+        <h4 className="text-2xl mt-20 flex top-24 justify-center font-semibold text-center underline decoration-[#F7AB0A]/50">
+          Lets talk
         </h4>
 
         <div className="space-y-10">
@@ -55,7 +54,7 @@ function ContactMe({}: Props) {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-2 w-fit mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 w-fit">
             <input
               {...register("name")}
               placeholder="Name"
@@ -84,7 +83,7 @@ function ContactMe({}: Props) {
           />
           <button
             type="submit"
-            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg"
+            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg mb-40"
           >
             Submit
           </button>
