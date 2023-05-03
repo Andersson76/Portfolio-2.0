@@ -11,7 +11,7 @@ function ExperienceCard({ experience }: Props) {
   return (
     <article
       className="flex mt-20 flex-col rounded-lg items-center space-y-7 flex-shrink-0
-    w-[500px] md:w-[600px] xl:w-[900] snap-center bg-[#292929] p-10 hover:opacity-100
+    w-[500px] md:w-[600px] xl:w-[900] snap-center bg-[#292929] py-10 hover:opacity-100
     opacity-60 cursor-pointer transition-opacity duration-200 overflow-hidden"
     >
       <motion.img
@@ -27,8 +27,8 @@ function ExperienceCard({ experience }: Props) {
         alt=""
       />
       <div className="px-0 md:px-10">
-        {/* <h4 className="text-4xl font-light">Webbutvecklare</h4>
-        <p className="font-bold text-2xl mt-1">Wallmander & Co</p> */}
+        <h4 className="text-4xl font-light">Webbutvecklare</h4>
+        <p className="font-bold text-2xl mt-1"></p>
         <div className="flex space-x-2 my-8">
           {experience.technologies.map(technology => (
             <img
@@ -39,12 +39,13 @@ function ExperienceCard({ experience }: Props) {
           ))}
         </div>
 
-      <p className="uppercase py-1 mb-4 text-gray-500">
+      <p className="uppercase py-5 text-gray-500">
         {new Date(experience.dateStarted).toDateString()} - {experience.
         isCurrentlyWorkingHere ? "Present" : new Date(experience.dateEnded).toDateString()}
       </p>
 
-      <ul className="list-disc space-y-4 ml-5 text-lg">
+      <ul className="list-disc space-y-4 ml-5 text-lg max-h-96 overflow-y-scroll pr-5
+      scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]">
         {experience.points.map((point: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined, i: React.Key | null | undefined) => (
           <li key={i}>{point}</li>
         ))}
