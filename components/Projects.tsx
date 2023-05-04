@@ -18,7 +18,7 @@ function Projects({ projects }: Props) {
       className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row
         max-w-full justify-evenly mx-auto items-center z-0"
     >
-      <h3 className="absolute mt-6 top-16 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-20 pl-6 uppercase tracking-[20px] text-gray-500 text-2xl">
         Projects
       </h3>
 
