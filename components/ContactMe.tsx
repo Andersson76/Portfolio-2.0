@@ -28,12 +28,12 @@ function ContactMe({}: Props) {
         Contact
       </h3> */}
 
-      <div className="flex flex-col space-y-10 ">
+      <div className="flex flex-col space-y-6 pt-20">
         <h4 className="text-2xl mt-20 flex top-24 justify-center font-semibold text-center underline decoration-[#F7AB0A]/50">
           Lets talk
         </h4>
 
-        <div className="space-y-10">
+        <div className="space-y-6">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#F7AB0A] h-7 w-t animate-bounce" />
             <p className="text-2xl">+46 73 588 01 88</p>
@@ -52,26 +52,28 @@ function ContactMe({}: Props) {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-2 w-[225px] mx-auto pb-40"
         >
-          <div className="flex space-x-2 w-fit">
+          <div className="">
             <input
               {...register("name")}
               placeholder="Name"
               className="contactInput"
               type="text"
             />
-            <input
-              {...register("email")}
-              placeholder="Email"
-              className="contactInput"
-              type="email"
-            />
           </div>
+            {/* <div className="flex w-[100px]">
+              <input
+                {...register("email")}
+                placeholder="Email"
+                className="contactInput"
+                type="email"
+              />
+            </div> */}
 
           <input
-            {...register("subject")}
-            placeholder="Subject"
+            {...register("email")}
+            placeholder="Email"
             className="contactInput"
             type="text"
           />
@@ -83,7 +85,7 @@ function ContactMe({}: Props) {
           />
           <button
             type="submit"
-            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg mb-40"
+            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg"
           >
             Submit
           </button>
