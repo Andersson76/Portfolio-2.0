@@ -10,8 +10,8 @@ type Props = {
 function ExperienceCard({ experience }: Props) {
   return (
     <article
-      className="flex mt-20 flex-col rounded-lg items-center space-y-7 flex-shrink-0
-    w-[500px] md:w-[600px] xl:w-[900] snap-center bg-[#292929] py-10 hover:opacity-100
+      className="flex mt-20 flex-col rounded-lg items-center space-y-2 flex-shrink-0
+    w-[300px] md:w-[300px] xl:w-[600] snap-center bg-[#292929] py-2 hover:opacity-100
     opacity-60 cursor-pointer transition-opacity duration-200 overflow-hidden"
     >
       <motion.img
@@ -21,13 +21,13 @@ function ExperienceCard({ experience }: Props) {
         }}
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+        //viewport={{ once: true }}
+        className="w-20 h-20 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
         src={urlFor(experience?.companyImage).url()}
         alt=""
       />
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">Webbutvecklare</h4>
+        <h4 className="text-2xl font-light">Webbutvecklare</h4>
         <p className="font-bold text-2xl mt-1"></p>
         <div className="flex space-x-2 my-8">
           {experience.technologies.map(technology => (
