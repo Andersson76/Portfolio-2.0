@@ -17,8 +17,8 @@ export default {
       },
     },
     {
-      name: 'company',
-      title: 'Company',
+      name: 'companyName',
+      title: 'CompanyName',
       type: 'text',
     },
     {
