@@ -40,6 +40,7 @@ export interface Skill extends SanityBody {
 }
 
 export interface Experience extends SanityBody {
+  companyName: ReactNode;
   points: ReactNode;
   dateEnded: string | number | Date;
   isCurrentlyWorkingHere: any;
