@@ -12,7 +12,7 @@ function WorkExperience({ experiences }: Props) {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 2.5 }}
       className="h-screen flex relative overflow-hidden flex-col text-center pt-10 md:flex-row
       max-w-full px-10 justify-evenly mx-auto items-center"
     >
@@ -24,7 +24,7 @@ function WorkExperience({ experiences }: Props) {
         className="w-full flex space-x-1 overflow-x-scroll snap-x snap-mandatory scrollbar-thin
         scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]"
       >
-        {experiences?.map((experience) => (
+        {experiences?.map(experience => (
           <ExperienceCard key={experience._id} experience={experience} />
         ))}
       </div>
