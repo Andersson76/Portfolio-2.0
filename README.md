@@ -1,4 +1,4 @@
-This is a My latest Portfolio made with Next.js
+This is a Portfolio built with Next.js, TypeScript, Motion, TailwindCSS, Sanity as backend.
 
 ## Getting Started
 
@@ -8,6 +8,17 @@ npm run dev
 
 Then:
 
-Open http://localhost:3000 with your browser to see the result.
+Open localhost:3000 in your browser to see the result.
+
+Then:
+
+cd sanity
+
+npm run dev
+
+Open localhost:3333 in your browser to use the cms.
+
+
+Or: https://anderssons.site
 
 
