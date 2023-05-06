@@ -45,36 +45,39 @@ function Projects({ projects }: Props) {
             />
 
             <Link href={project?.linkToBuild}>
-            <div className="space-y-5 lg:space-y-10 md:px-10 max-w-6xl">
-              <h4 className="text-xl lg:text-4xl font-semibold text-center">
-                <span className="underline decoration-[#F7AB0A]/50">
-                  Case Study {i + 1} of {projects.length}:
-                </span>{" "}
-                {project?.title}
-              </h4>
+              <div className="space-y-5 lg:space-y-10 md:px-10 max-w-6xl">
+                <h4 className="text-xl lg:text-4xl font-semibold text-center">
+                  <span className="underline decoration-[#F7AB0A]/50">
+                    Case Study {i + 1} of {projects.length}:
+                  </span>{" "}
+                  {project?.title}
+                </h4>
 
-              <div className="flex items-center space-x-2 justify-center">
-                {project?.technologies.map((technology) => (
-                  <img
-                  className="h-7 w-7 lg:h-10 lg:w-10"
-                  key={technology._id}
-                  src={urlFor(technology.image).url()}
-                  alt=""
-                  />
+                <div className="flex items-center space-x-2 justify-center">
+                  {project?.technologies.map((technology) => (
+                    <img
+                      className="h-7 w-7 lg:h-10 lg:w-10"
+                      key={technology._id}
+                      src={urlFor(technology.image).url()}
+                      alt=""
+                    />
                   ))}
+                </div>
+                <p className="text-sm lg:text-lg text-center md:text-left">
+                  {project?.summary}
+                </p>
+                <p className="text-sm lg:text-lg text-center md:text-left">
+                  {project?.linkTitle}
+                </p>
               </div>
-              <p className="text-sm lg:text-lg text-center md:text-left">
-                {project?.summary}
-              </p>
-            </div>
             </Link>
           </div>
         ))}
       </div>
 
-<div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12" />
+      <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12" />
     </motion.div>
-    );
+  );
   }
 
 export default Projects
