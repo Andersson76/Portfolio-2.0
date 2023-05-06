@@ -12,7 +12,7 @@ import { Experience, PageInfo, Project, Skill, Social } from '@/sanity/typings'
 import  fetchPageInfo  from '@/utils/fetchPageInfo'
 import  fetchExperiences  from '@/utils/fetchExperiences'
 import  fetchSkills  from '@/utils/fetchSkills'
-import  fetchProjects  from '@/utils/fetchProjects'
+import  {fetchProjects}  from '@/utils/fetchProjects'
 import  fetchSocials  from '@/utils/fetchSocials'
 import React, { useEffect } from "react";
 //import AudioPlayer from '@/components/AudioPlayer'
@@ -118,7 +118,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects: projects ? projects : [],
       socials: socials ? socials : [],
     },
-    revalidate: 60,
+    revalidate: 10,
   };
 };
 

@@ -1,3 +1,5 @@
+import { Url } from "url";
+
 interface SanityBody {
     _createdAt: string;
     _id: string;
@@ -43,7 +45,7 @@ export interface Experience extends SanityBody {
   companyName: ReactNode;
   points: ReactNode;
   dateEnded: string | number | Date;
-  isCurrentlyWorkingHere: any;
+  isCurrentlyWorkingHere: boolean;
   dateStarted: string | number | Date;
   _type: 'experience'
   image: Image
@@ -60,6 +62,7 @@ export interface Project extends SanityBody {
     linkToBuild: string;
     summary: string;
     technologies: Technology[];
+    url: string;
 }
 
 export interface Social extends SanityBody {
