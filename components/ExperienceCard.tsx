@@ -2,7 +2,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Experience } from '@/sanity/typings';
 import { urlFor } from '@/sanity';
-import WorkExperience from './WorkExperience';
 
 type Props = {
   experience: Experience
@@ -11,8 +10,8 @@ type Props = {
 function ExperienceCard({ experience }: Props) {
   return (
     <article
-      className="flex mt-20 flex-col rounded-lg items-center space-y-2 flex-shrink-0
-    w-fit snap-center bg-[#292929] py-2 hover:opacity-100
+      className="flex mt-60 flex-col rounded-lg items-center space-y-2 flex-shrink-0
+    w-fit h-screen snap-center bg-[#292929] py-2 hover:opacity-100
     opacity-60 cursor-pointer transition-opacity duration-200 overflow-hidden"
     >
       <motion.img
