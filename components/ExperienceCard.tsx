@@ -10,7 +10,7 @@ type Props = {
 function ExperienceCard({ experience }: Props) {
   return (
     <article
-      className="flex mt-60 py-8 flex-col rounded-lg items-center space-y-2 flex-shrink-0
+      className="flex mt-60 py-8  flex-col rounded-lg items-center space-y-2 flex-shrink-0
     w-[450px] h-screen snap-center bg-[#292929] hover:opacity-100
     opacity-60 cursor-pointer transition-opacity duration-200 overflow-hidden"
     >
@@ -29,7 +29,7 @@ function ExperienceCard({ experience }: Props) {
       <div className="px-0 md:px-10">
         <h4 className="text-2xl font-light">{experience?.companyName}</h4>
         <p className="font-bold text-2xl mt-1">{experience?.summary}</p>
-        <div className="flex space-x-2 my-2">
+        <div className="flex justify-center space-x-2 my-2">
           {experience.technologies.map((technology) => (
             <img
               key={technology._id}
@@ -47,8 +47,8 @@ function ExperienceCard({ experience }: Props) {
         </p>
 
         <ul
-          className="list-disc space-y-4 ml-5 text-lg max-h-96 overflow-y-scroll pr-5
-      scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]"
+          className="list-disc space-y-4 mx-5 text-lg max-h-96 overflow-y-scroll pr-5
+       scrollbar-thumb-[#F7AB0A]"
         >
           {experience.points.map(
             (
