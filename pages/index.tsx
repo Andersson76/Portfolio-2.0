@@ -30,9 +30,9 @@ const Home = ({
    pageInfo, experiences, skills, projects, socials}: Props) => {
     console.log(skills)
 
-/* useEffect(() => {
+useEffect(() => {
   const AudioPlayer = () => {
-    const audio = new Audio("/Buddha Bar Lounge - Dub Marley.mp3");
+    const audio = new Audio("/CoolingDown.mp3");
     audio.autoplay = true;
     audio.loop = true;
     audio.play().catch((error) => {
@@ -40,7 +40,7 @@ const Home = ({
     });
   };
   AudioPlayer()
-}, []); */
+}, []);
 
   return (
     <div
