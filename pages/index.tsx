@@ -41,8 +41,6 @@ const Home = ({
         <title>Martins Portfolio</title>
       </Head>
 
-      <AudioPlayer />
-
       <Header socials={socials} />
 
       <section id="hero" className="snap-start">
@@ -108,4 +106,3 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     revalidate: 60,
   };
 };
-
