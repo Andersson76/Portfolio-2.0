@@ -46,7 +46,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
     scrollbar-thumb-[#F7AB0A]"
     >
       <Head>
-        <title>Martins Portfolio</title>
+        <title>Martin Andersson</title>
       </Head>
 
       {/* <AudioPlayer /> */}
