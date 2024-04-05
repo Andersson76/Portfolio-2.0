@@ -15,8 +15,6 @@ import fetchSkills from "@/utils/fetchSkills";
 import { fetchProjects } from "@/utils/fetchProjects";
 import fetchSocials from "@/utils/fetchSocials";
 import React, { useEffect } from "react";
-import Image from "next/image";
-//import AudioPlayer from '@/components/AudioPlayer'
 
 type Props = {
   pageInfo: PageInfo;
