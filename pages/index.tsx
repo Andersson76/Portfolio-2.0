@@ -1,46 +1,43 @@
-import type { GetStaticProps } from 'next'
-import Head from 'next/head'
-import Header from '@/components/Header'
-import Hero from '@/components/Hero'
-import About from '@/components/About'
-import WorkExperience from '@/components/WorkExperience'
-import Skills from '@/components/Skills'
-import Projects from '@/components/Projects'
-import ContactMe from '@/components/ContactMe'
-import Link from 'next/link'
-import { Experience, PageInfo, Project, Skill, Social } from '@/sanity/typings'
-import  fetchPageInfo  from '@/utils/fetchPageInfo'
-import  fetchExperiences  from '@/utils/fetchExperiences'
-import  fetchSkills  from '@/utils/fetchSkills'
-import  {fetchProjects}  from '@/utils/fetchProjects'
-import  fetchSocials  from '@/utils/fetchSocials'
+import type { GetStaticProps } from "next";
+import Head from "next/head";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import WorkExperience from "@/components/WorkExperience";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import ContactMe from "@/components/ContactMe";
+import Link from "next/link";
+import { Experience, PageInfo, Project, Skill, Social } from "@/sanity/typings";
+import fetchPageInfo from "@/utils/fetchPageInfo";
+import fetchExperiences from "@/utils/fetchExperiences";
+import fetchSkills from "@/utils/fetchSkills";
+import { fetchProjects } from "@/utils/fetchProjects";
+import fetchSocials from "@/utils/fetchSocials";
 import React, { useEffect } from "react";
-//import AudioPlayer from '@/components/AudioPlayer'
-
 
 type Props = {
- pageInfo: PageInfo;
+  pageInfo: PageInfo;
   experiences: Experience[];
   skills: Skill[];
   projects: Project[];
   socials: Social[];
-}
+};
 
-const Home = ({
-   pageInfo, experiences, skills, projects, socials}: Props) => {
-    console.log(skills)
+const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
+  console.log(skills);
 
-useEffect(() => {
-  const AudioPlayer = () => {
-    const audio = new Audio("/CoolingDown.mp3");
-    audio.autoplay = true;
-    audio.loop = true;
-    audio.play().catch((error) => {
-      console.log(error);
-    });
-  };
-  AudioPlayer()
-}, []);
+  useEffect(() => {
+    const AudioPlayer = () => {
+      const audio = new Audio("/CoolingDown.mp3");
+      audio.autoplay = true;
+      audio.loop = true;
+      audio.play().catch((error) => {
+        console.log(error);
+      });
+    };
+    AudioPlayer();
+  }, []);
 
   return (
     <div
@@ -48,8 +45,6 @@ useEffect(() => {
     overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20
     scrollbar-thumb-[#F7AB0A]"
     >
-
-
       <Head>
         <title>Martins Portfolio</title>
       </Head>
@@ -101,14 +96,13 @@ useEffect(() => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-
-  const pageInfo: PageInfo = await fetchPageInfo()
+  const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
   const socials: Social[] = await fetchSocials();
 
-  console.log(skills)
+  console.log(skills);
 
   return {
     props: {
@@ -121,4 +115,3 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     revalidate: 10,
   };
 };
-
