@@ -27,7 +27,7 @@ type Props = {
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
   console.log(skills);
 
-  useEffect(() => {
+/*   useEffect(() => {
     const AudioPlayer = () => {
       const audio = new Audio("/CoolingDown.mp3");
       audio.autoplay = true;
@@ -37,7 +37,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       });
     };
     AudioPlayer();
-  }, []);
+  }, []); */
 
   return (
     <div
