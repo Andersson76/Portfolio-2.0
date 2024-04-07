@@ -15,6 +15,8 @@ import fetchSkills from "@/utils/fetchSkills";
 import { fetchProjects } from "@/utils/fetchProjects";
 import fetchSocials from "@/utils/fetchSocials";
 import React, { useEffect } from "react";
+import { sanityClient } from "@/sanity";
+import { groq } from "next-sanity";
 
 type Props = {
   pageInfo: PageInfo;
@@ -27,7 +29,7 @@ type Props = {
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
   console.log(skills);
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     const AudioPlayer = () => {
       const audio = new Audio("/CoolingDown.mp3");
       audio.autoplay = true;
@@ -96,11 +98,16 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperiences();
-  const skills: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
-  const socials: Social[] = await fetchSocials();
+  const query = groq`*[_type == "pageInfo"][0]`;
+  const pageInfo = await sanityClient.fetch(query);
+  const query2 = groq`*[_type == "experiences"][0]`;
+  const experiences = await sanityClient.fetch(query2);
+  const query3 = groq`*[_type == "skills"][0]`;
+  const skills = await sanityClient.fetch(query3);
+  const query4 = groq`*[_type == "projects"][0]`;
+  const projects = await sanityClient.fetch(query4);
+  const query5 = groq`*[_type == "socials"][0]`;
+  const socials = await sanityClient.fetch(query5);
 
   console.log(skills);
 

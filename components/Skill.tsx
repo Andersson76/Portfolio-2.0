@@ -1,15 +1,15 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Skill } from '@/sanity/typings';
-import { urlFor } from '@/sanity';
+import React from "react";
+import { motion } from "framer-motion";
+import type { Skill } from "@/sanity/typings";
+import { urlFor } from "@/sanity";
 
 type Props = {
   skill: Skill;
   directionLeft?: boolean;
-}
+};
 
 function Skill({ skill, directionLeft }: Props) {
-  console.log(skill)
+  console.log(skill);
   return (
     <div className="group relative flex cursor-pointer">
       <motion.img
@@ -37,4 +37,4 @@ function Skill({ skill, directionLeft }: Props) {
     </div>
   );
 }
-export default Skill
+export default Skill;
