@@ -25,9 +25,9 @@ type Props = {
 };
 
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
-  console.log(skills);
 
-/*   useEffect(() => {
+
+  /*   useEffect(() => {
     const AudioPlayer = () => {
       const audio = new Audio("/CoolingDown.mp3");
       audio.autoplay = true;
@@ -101,8 +101,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
   const socials: Social[] = await fetchSocials();
-
-  console.log(skills);
 
   return {
     props: {
