@@ -1,24 +1,24 @@
-import React from 'react';
+import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import BackgroundCircles from './BackgroundCircles';
-import Link from 'next/link';
-import { PageInfo } from '@/sanity/typings';
-import { urlFor } from '@/sanity';
+import BackgroundCircles from "./BackgroundCircles";
+import Link from "next/link";
+import { PageInfo } from "@/sanity/typings";
+import { urlFor } from "@/sanity";
 
 type Props = {
-  pageInfo: PageInfo
+  pageInfo: PageInfo;
 };
 
-export default function Hero({ pageInfo}: Props) {
-    const [text, count] = useTypewriter({
-        words: [
-            `Hi, the Name is ${pageInfo?.name}`,
-            "Guy-who-loves-Tech",
-            "<AndLovesToCodeMore />"
-        ],
-        loop: true,
-        delaySpeed: 2000
-    });
+export default function Hero({ pageInfo }: Props) {
+  const [text, count] = useTypewriter({
+    words: [
+      `Hi, the Name is ${pageInfo?.name}`,
+      "Guy-who-loves-Tech",
+      "<AndLovesToCodeMore />",
+    ],
+    loop: true,
+    delaySpeed: 2000,
+  });
   return (
     <div
       className="h-screen flex flex-col space-y-8 items-center justify-center
