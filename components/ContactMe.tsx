@@ -35,7 +35,7 @@ function ContactMe({}: Props) {
   return (
     <div
       className="h-screen flex relative flex-col text-center md:text-left md:flex-row
-    max-w-7xl px-10 justify-evenly mx-auto items-center"
+    max-w-7xl px-10 justify-center mx-auto items-center"
     >
       <Formik
         initialValues={{ name: "", email: "", message: "" }}
@@ -53,19 +53,19 @@ function ContactMe({}: Props) {
         }}
       >
         {({ errors, touched, isSubmitting }) => (
-          <Form className="flex flex-col space-y-6 pt-20 w-full md:w-1/2">
+          <Form className="flex flex-col space-y-6 pb-20 pt-10 w-full max-w-md mx-auto md:w-1/2">
             <h4 className="text-2xl mt-20 flex justify-center font-semibold text-center underline decoration-[#F7AB0A]/50">
               Let&apos;s talk
             </h4>
 
             <div className="space-y-6">
               <div className="flex items-center space-x-5 justify-center">
-                <PhoneIcon className="text-[#F7AB0A] h-7 w-t animate-bounce" />
+                <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-bounce" />
                 <p className="text-2xl">+46 73 588 01 88</p>
               </div>
 
               <div className="flex items-center space-x-5 justify-center">
-                <EnvelopeIcon className="text-[#F7AB0A] h-7 w-t animate-pulse" />
+                <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
                 <p className="text-2xl">martin.andersson@me.com</p>
               </div>
 
@@ -74,8 +74,8 @@ function ContactMe({}: Props) {
                 <p className="text-2xl">Gothenburg, Sweden</p>
               </div>
             </div>
-            <div>
-              <label htmlFor="Name" className="contactInput">
+            <div className="flex flex-col space-y-4">
+              <label htmlFor="Name" className="text-left">
                 {" "}
                 Name
               </label>
@@ -87,8 +87,8 @@ function ContactMe({}: Props) {
               )}
             </div>
 
-            <div>
-              <label htmlFor="email" className="contactInput">
+            <div className="flex flex-col space-y-4">
+              <label htmlFor="email" className="text-left">
                 Email
               </label>
               <Field type="email" name="email" className="contactInput" />
@@ -98,8 +98,8 @@ function ContactMe({}: Props) {
                 </div>
               )}
             </div>
-            <div>
-              <label htmlFor="message" className="contactInput">
+            <div className="flex flex-col space-y-4">
+              <label htmlFor="message" className="text-left">
                 Message
               </label>
               <Field as="textarea" name="message" className="contactInput" />
