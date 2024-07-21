@@ -53,24 +53,24 @@ function ContactMe({}: Props) {
         }}
       >
         {({ errors, touched, isSubmitting }) => (
-          <Form className="flex flex-col space-y-6 pb-36 pt-20 mb-16 mt-10 w-full max-w-md md:w-1/2">
+          <Form className="flex flex-col space-y-6 pb-20 pt-10 w-full max-w-md mx-auto md:w-1/2">
             <h4 className="text-2xl mt-20 flex justify-center font-semibold text-center underline decoration-[#F7AB0A]/50">
               Let&apos;s talk
             </h4>
 
-            <div className="space-y-2">
-              <div className="flex items-center space-x-5 justify-center">
-                <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-bounce" />
+            <div className="space-y-6">
+              <div className="flex items-center space-x-1 justify-center">
+                <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
                 <p className="text-2xl">+46 73 588 01 88</p>
               </div>
 
-              <div className="flex items-center space-x-5 justify-center">
+              <div className="flex items-center space-x-1 justify-center">
                 <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
                 <p className="text-2xl">martin.andersson@me.com</p>
               </div>
 
-              <div className="flex items-center space-x-5 justify-center">
-                <MapPinIcon className="text-[#F7AB0A] h-7 w-t" />
+              <div className="flex items-center space-x-1 justify-center">
+                <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
                 <p className="text-2xl">Gothenburg, Sweden</p>
               </div>
             </div>
