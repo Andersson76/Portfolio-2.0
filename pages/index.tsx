@@ -15,6 +15,7 @@ import fetchSkills from "@/utils/fetchSkills";
 import { fetchProjects } from "@/utils/fetchProjects";
 import fetchSocials from "@/utils/fetchSocials";
 import React, { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 type Props = {
   pageInfo: PageInfo;
@@ -25,8 +26,6 @@ type Props = {
 };
 
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
-
-
   /*   useEffect(() => {
     const AudioPlayer = () => {
       const audio = new Audio("/CoolingDown.mp3");
