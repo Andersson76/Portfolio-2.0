@@ -1,15 +1,14 @@
-import React from 'react'
-import { motion } from 'framer-motion';
-import { Project } from '@/sanity/typings';
-import { urlFor } from '@/sanity';
-import Link from 'next/link';
+import React from "react";
+import { motion } from "framer-motion";
+import { Project } from "@/sanity/typings";
+import { urlFor } from "@/sanity";
+import Link from "next/link";
 
 type Props = {
   projects: Project[];
 };
 
 function Projects({ projects }: Props) {
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -48,7 +47,7 @@ function Projects({ projects }: Props) {
               <div className="space-y-5 lg:space-y-10 md:px-10 max-w-6xl">
                 <h4 className="text-xl lg:text-4xl font-semibold text-center">
                   <span className="underline decoration-[#F7AB0A]/50">
-                    Case Study {i + 1} of {projects.length}:
+                    {i + 1} of {projects.length}:
                   </span>{" "}
                   {project?.title}
                 </h4>
@@ -78,6 +77,6 @@ function Projects({ projects }: Props) {
       <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12" />
     </motion.div>
   );
-  }
+}
 
-export default Projects
+export default Projects;
